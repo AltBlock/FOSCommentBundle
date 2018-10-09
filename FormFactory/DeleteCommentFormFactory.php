@@ -50,9 +50,9 @@ class DeleteCommentFormFactory implements DeleteCommentFormFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createForm()
+    public function createForm($data = null, $options = array())
     {
-        $builder = $this->formFactory->createNamedBuilder($this->name, $this->type, null, array('method' => 'PATCH'));
+        $builder = $this->formFactory->createNamedBuilder($this->name, $this->type, $data, $options);
 
         return $builder->getForm();
     }
